@@ -1,0 +1,23 @@
+# Gemfile for AIverse Jekyll Site
+
+source "https://rubygems.org"
+
+# GitHub Pages compatibility
+gem "github-pages", group: :jekyll_plugins
+
+# Jekyll theme (official minimal theme)
+gem "jekyll-theme-minimal"
+
+# Jekyll plugins
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+end
+
+# Windows and JRuby unsupported
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+  gem "wdm", "~> 0.1.1"
+end
