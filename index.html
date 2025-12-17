@@ -1,335 +1,624 @@
----
-layout: default
-title: "AIverse - Discover 1000+ AI Tools | Professional AI Directory"
-description: "AIverse - Your comprehensive directory for 1000+ AI tools. Discover, compare and find the perfect AI solution for your needs. Free AI tools directory with ratings, reviews and affiliate links."
----
-
-<!-- Hero Section -->
-<section class="hero" id="home">
-    <div class="hero-background">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-        <div class="particles" id="particles"></div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIverse - Discover 1000+ AI Tools | Professional AI Directory</title>
     
-    <div class="hero-container">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-icon">🚀</span>
-                <span>1000+ AI Tools Available</span>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AIverse - Your comprehensive directory for 1000+ AI tools. Discover, compare and find the perfect AI solution for your needs. Free AI tools directory with ratings, reviews and affiliate links.">
+    <meta name="keywords" content="AI tools, artificial intelligence, directory, chatbots, design AI, writing AI, productivity tools, AI software, machine learning, automation">
+    <meta name="author" content="AIverse Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AIverse - Discover 1000+ AI Tools">
+    <meta property="og:description" content="Your comprehensive directory for artificial intelligence tools and applications">
+    <meta property="og:image" content="https://aiverse.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://aiverse.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AIverse - AI Tools Directory">
+    <meta name="twitter:description" content="Discover 1000+ AI tools across all categories">
+    <meta name="twitter:image" content="https://aiverse.com/assets/twitter-card.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/app.js" as="script">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AIverse",
+        "description": "Comprehensive directory for AI tools and applications",
+        "url": "https://aiverse.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://aiverse.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="ai-logo">🤖</div>
+                <h2>AIverse</h2>
             </div>
-            
-            <h1 class="hero-title">
-                Discover the Future of 
-                <span class="gradient-text">Artificial Intelligence</span>
-            </h1>
-            
-            <p class="hero-description">
-                Your comprehensive directory for discovering, comparing, and utilizing the best AI tools and applications. From chatbots to design AI, find the perfect solution for your needs.
-            </p>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="1000">0</div>
-                    <div class="stat-label">AI Tools</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="15">0</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="50000">0</div>
-                    <div class="stat-label">Monthly Users</div>
-                </div>
+            <div class="loading-spinner">
+                <div class="spinner"></div>
             </div>
-            
-            <div class="hero-actions">
-                <button class="btn btn-primary" id="explore-tools">
-                    <span class="btn-icon">🚀</span>
-                    <span>Explore Tools</span>
-                </button>
-                <button class="btn btn-secondary" id="submit-tool">
-                    <span class="btn-icon">➕</span>
-                    <span>Submit Tool</span>
-                </button>
-            </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="hero-cards">
-                <div class="floating-card card-1">
-                    <div class="card-icon">🤖</div>
-                    <h3>AI Tools</h3>
-                    <p>403 tools</p>
-                </div>
-                <div class="floating-card card-2">
-                    <div class="card-icon">🎨</div>
-                    <h3>Design AI</h3>
-                    <p>116 tools</p>
-                </div>
-                <div class="floating-card card-3">
-                    <div class="card-icon">✍️</div>
-                    <h3>Writing AI</h3>
-                    <p>66 tools</p>
-                </div>
-            </div>
+            <p>Loading AI Tools Directory...</p>
         </div>
     </div>
-</section>
 
-<!-- Featured Tools Section -->
-<section class="featured-section" id="featured">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-badge">
-                <span class="badge-icon">⭐</span>
-                <span>Featured Tools</span>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="brand-logo">
+                        <div class="logo-icon">🤖</div>
+                        <div class="brand-text">
+                            <h1>AIverse</h1>
+                            <span>AI Tools Directory</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <div class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <span class="nav-icon">🏠</span>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#categories" class="nav-link">
+                            <span class="nav-icon">📁</span>
+                            <span>Categories</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item" data-category="ai">🤖 AI Tools (403)</a>
+                            <a href="#" class="dropdown-item" data-category="design">🎨 Design AI (116)</a>
+                            <a href="#" class="dropdown-item" data-category="writing">✍️ Writing AI (66)</a>
+                            <a href="#" class="dropdown-item" data-category="productivity">⚡ Productivity (89)</a>
+                            <a href="#" class="dropdown-item" data-category="chatbots">💬 Chatbots (27)</a>
+                            <a href="#" class="dropdown-item" data-category="video">🎥 Video AI (43)</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#featured" class="nav-link">
+                            <span class="nav-icon">⭐</span>
+                            <span>Featured</span>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#submit" class="nav-link">
+                            <span class="nav-icon">➕</span>
+                            <span>Submit Tool</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle">
+                        <span class="search-icon">🔍</span>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
             </div>
-            <h2 class="section-title">Top Recommendation of the Day</h2>
-            <p class="section-description">Handpicked AI tools that are trending and highly rated by our community</p>
-        </div>
+        </nav>
         
-        <div class="featured-tool">
-            <div class="featured-content">
-                <div class="featured-tool-info">
-                    <div class="tool-header">
-                        <div class="tool-logo">
-                            <img src="https://logo.clearbit.com/claude.ai" alt="Claude AI" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiM2NjdlZWEiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5COPC90ZXh0Pgo8L3N2Zz4K'">
+        <!-- Search Bar -->
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search AI tools, categories, or features..." autocomplete="off">
+                    <button class="search-btn" id="search-btn">
+                        <span class="search-icon">🔍</span>
+                    </button>
+                    <button class="search-close" id="search-close">✕</button>
+                </div>
+                <div class="search-suggestions" id="search-suggestions">
+                    <div class="suggestions-header">Popular Searches</div>
+                    <div class="suggestions-grid">
+                        <span class="suggestion-tag" data-query="ChatGPT">ChatGPT</span>
+                        <span class="suggestion-tag" data-query="Design AI">Design AI</span>
+                        <span class="suggestion-tag" data-query="Writing Assistant">Writing Assistant</span>
+                        <span class="suggestion-tag" data-query="Video AI">Video AI</span>
+                        <span class="suggestion-tag" data-query="Productivity">Productivity</span>
+                        <span class="suggestion-tag" data-query="Chatbots">Chatbots</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+                <div class="particles" id="particles"></div>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🚀</span>
+                        <span>1000+ AI Tools Available</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Discover the Future of 
+                        <span class="gradient-text">Artificial Intelligence</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Your comprehensive directory for discovering, comparing, and utilizing the best AI tools and applications. From chatbots to design AI, find the perfect solution for your needs.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="1000">0</div>
+                            <div class="stat-label">AI Tools</div>
                         </div>
-                        <div class="tool-rating">
-                            <div class="rating-stars">⭐⭐⭐⭐⭐</div>
-                            <div class="rating-score">4.9/5</div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50000">0</div>
+                            <div class="stat-label">Monthly Users</div>
                         </div>
                     </div>
                     
-                    <h3 class="tool-name">Claude AI</h3>
-                    <p class="tool-description">Advanced AI assistant by Anthropic focused on being helpful, harmless, and honest. Perfect for research, writing, analysis, and complex problem-solving tasks.</p>
-                    
-                    <div class="tool-meta">
-                        <span class="meta-item">
-                            <span class="meta-icon">📈</span>
-                            <span>↗️ +45% growth</span>
-                        </span>
-                        <span class="meta-item">
-                            <span class="meta-icon">🆓</span>
-                            <span>Freemium</span>
-                        </span>
-                        <span class="meta-item">
-                            <span class="meta-icon">🏷️</span>
-                            <span>AI Assistant</span>
-                        </span>
-                    </div>
-                    
-                    <div class="tool-actions">
-                        <button class="btn btn-primary visit-tool" data-tool="claude">
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="explore-tools">
                             <span class="btn-icon">🚀</span>
-                            <span>Try Claude Now</span>
+                            <span>Explore Tools</span>
                         </button>
-                        <button class="btn btn-outline save-tool">
-                            <span class="btn-icon">💾</span>
-                            <span>Save</span>
+                        <button class="btn btn-secondary" id="submit-tool">
+                            <span class="btn-icon">➕</span>
+                            <span>Submit Tool</span>
                         </button>
                     </div>
                 </div>
                 
-                <div class="featured-visual">
-                    <div class="tool-preview">
-                        <div class="preview-header">
-                            <div class="preview-dots">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                            <div class="preview-title">Claude AI Interface</div>
+                <div class="hero-visual">
+                    <div class="hero-cards">
+                        <div class="floating-card card-1">
+                            <div class="card-icon">🤖</div>
+                            <h3>AI Tools</h3>
+                            <p>403 tools</p>
                         </div>
-                        <div class="preview-content">
-                            <div class="chat-bubble user">
-                                <span>Explain quantum computing in simple terms</span>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">🎨</div>
+                            <h3>Design AI</h3>
+                            <p>116 tools</p>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-icon">✍️</div>
+                            <h3>Writing AI</h3>
+                            <p>66 tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Tools Section -->
+        <section class="featured-section" id="featured">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">⭐</span>
+                        <span>Featured Tools</span>
+                    </div>
+                    <h2 class="section-title">Top Recommendation of the Day</h2>
+                    <p class="section-description">Handpicked AI tools that are trending and highly rated by our community</p>
+                </div>
+                
+                <div class="featured-tool">
+                    <div class="featured-content">
+                        <div class="featured-tool-info">
+                            <div class="tool-header">
+                                <div class="tool-logo">
+                                    <img src="https://logo.clearbit.com/claude.ai" alt="Claude AI" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiM2NjdlZWEiLz4KPHRleHQgeD0iNTAiIHk9IjU1IiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5COPC90ZXh0Pgo8L3N2Zz4K'">
+                                </div>
+                                <div class="tool-rating">
+                                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                                    <div class="rating-score">4.9/5</div>
+                                </div>
                             </div>
-                            <div class="chat-bubble ai">
-                                <span>Quantum computing uses quantum mechanics principles to process information exponentially faster than classical computers...</span>
+                            
+                            <h3 class="tool-name">Claude AI</h3>
+                            <p class="tool-description">Advanced AI assistant by Anthropic focused on being helpful, harmless, and honest. Perfect for research, writing, analysis, and complex problem-solving tasks.</p>
+                            
+                            <div class="tool-meta">
+                                <span class="meta-item">
+                                    <span class="meta-icon">📈</span>
+                                    <span>↗️ +45% growth</span>
+                                </span>
+                                <span class="meta-item">
+                                    <span class="meta-icon">🆓</span>
+                                    <span>Freemium</span>
+                                </span>
+                                <span class="meta-item">
+                                    <span class="meta-icon">🏷️</span>
+                                    <span>AI Assistant</span>
+                                </span>
+                            </div>
+                            
+                            <div class="tool-actions">
+                                <button class="btn btn-primary visit-tool" data-tool="claude">
+                                    <span class="btn-icon">🚀</span>
+                                    <span>Try Claude Now</span>
+                                </button>
+                                <button class="btn btn-outline save-tool">
+                                    <span class="btn-icon">💾</span>
+                                    <span>Save</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="featured-visual">
+                            <div class="tool-preview">
+                                <div class="preview-header">
+                                    <div class="preview-dots">
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                    <div class="preview-title">Claude AI Interface</div>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="chat-bubble user">
+                                        <span>Explain quantum computing in simple terms</span>
+                                    </div>
+                                    <div class="chat-bubble ai">
+                                        <span>Quantum computing uses quantum mechanics principles to process information exponentially faster than classical computers...</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- Categories Section -->
-<section class="categories-section" id="categories">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-badge">
-                <span class="badge-icon">📁</span>
-                <span>Browse Categories</span>
+        <!-- Categories Section -->
+        <section class="categories-section" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">📁</span>
+                        <span>Browse Categories</span>
+                    </div>
+                    <h2 class="section-title">Explore AI Tools by Category</h2>
+                    <p class="section-description">Discover AI tools organized by their primary function and use case</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card" data-category="ai">
+                        <div class="category-icon">
+                            <div class="icon-bg">🤖</div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">AI Tools</h3>
+                            <p class="category-description">General AI applications and intelligent assistants</p>
+                            <div class="category-stats">
+                                <span class="tools-count">403 tools</span>
+                                <span class="trend">↗️ +15% this month</span>
+                            </div>
+                            <div class="popular-tools">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">GPT-4</span>
+                            </div>
+                        </div>
+                        <div class="category-overlay">
+                            <button class="btn btn-primary">Explore AI Tools</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="design">
+                        <div class="category-icon">
+                            <div class="icon-bg">🎨</div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Design AI</h3>
+                            <p class="category-description">AI-powered design and creative tools</p>
+                            <div class="category-stats">
+                                <span class="tools-count">116 tools</span>
+                                <span class="trend">↗️ +23% this month</span>
+                            </div>
+                            <div class="popular-tools">
+                                <span class="tool-tag">Midjourney</span>
+                                <span class="tool-tag">DALL-E</span>
+                                <span class="tool-tag">Canva AI</span>
+                            </div>
+                        </div>
+                        <div class="category-overlay">
+                            <button class="btn btn-primary">Explore Design AI</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="writing">
+                        <div class="category-icon">
+                            <div class="icon-bg">✍️</div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Writing AI</h3>
+                            <p class="category-description">AI writing assistants and content creators</p>
+                            <div class="category-stats">
+                                <span class="tools-count">66 tools</span>
+                                <span class="trend">↗️ +18% this month</span>
+                            </div>
+                            <div class="popular-tools">
+                                <span class="tool-tag">Jasper</span>
+                                <span class="tool-tag">Copy.ai</span>
+                                <span class="tool-tag">Writesonic</span>
+                            </div>
+                        </div>
+                        <div class="category-overlay">
+                            <button class="btn btn-primary">Explore Writing AI</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="productivity">
+                        <div class="category-icon">
+                            <div class="icon-bg">⚡</div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Productivity</h3>
+                            <p class="category-description">AI tools to boost your productivity</p>
+                            <div class="category-stats">
+                                <span class="tools-count">89 tools</span>
+                                <span class="trend">↗️ +12% this month</span>
+                            </div>
+                            <div class="popular-tools">
+                                <span class="tool-tag">Notion AI</span>
+                                <span class="tool-tag">Otter.ai</span>
+                                <span class="tool-tag">Grammarly</span>
+                            </div>
+                        </div>
+                        <div class="category-overlay">
+                            <button class="btn btn-primary">Explore Productivity</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="chatbots">
+                        <div class="category-icon">
+                            <div class="icon-bg">💬</div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Chatbots</h3>
+                            <p class="category-description">AI chatbots for customer service and interaction</p>
+                            <div class="category-stats">
+                                <span class="tools-count">27 tools</span>
+                                <span class="trend">↗️ +8% this month</span>
+                            </div>
+                            <div class="popular-tools">
+                                <span class="tool-tag">Intercom</span>
+                                <span class="tool-tag">Drift</span>
+                                <span class="tool-tag">Tidio</span>
+                            </div>
+                        </div>
+                        <div class="category-overlay">
+                            <button class="btn btn-primary">Explore Chatbots</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" data-category="video">
+                        <div class="category-icon">
+                            <div class="icon-bg">🎥</div>
+                        </div>
+                        <div class="category-content">
+                            <h3 class="category-title">Video AI</h3>
+                            <p class="category-description">AI video creation and editing tools</p>
+                            <div class="category-stats">
+                                <span class="tools-count">43 tools</span>
+                                <span class="trend">↗️ +31% this month</span>
+                            </div>
+                            <div class="popular-tools">
+                                <span class="tool-tag">Synthesia</span>
+                                <span class="tool-tag">Runway</span>
+                                <span class="tool-tag">Pictory</span>
+                            </div>
+                        </div>
+                        <div class="category-overlay">
+                            <button class="btn btn-primary">Explore Video AI</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h2 class="section-title">Explore AI Tools by Category</h2>
-            <p class="section-description">Discover AI tools organized by their primary function and use case</p>
-        </div>
-        
-        <div class="categories-grid">
-            <div class="category-card" data-category="ai">
-                <div class="category-icon">
-                    <div class="icon-bg">🤖</div>
-                </div>
-                <div class="category-content">
-                    <h3 class="category-title">AI Tools</h3>
-                    <p class="category-description">General AI applications and intelligent assistants</p>
-                    <div class="category-stats">
-                        <span class="tools-count">403 tools</span>
-                        <span class="trend">↗️ +15% this month</span>
-                    </div>
-                    <div class="popular-tools">
-                        <span class="tool-tag">ChatGPT</span>
-                        <span class="tool-tag">Claude</span>
-                        <span class="tool-tag">GPT-4</span>
-                    </div>
-                </div>
-                <div class="category-overlay">
-                    <button class="btn btn-primary">Explore AI Tools</button>
-                </div>
-            </div>
-            
-            <div class="category-card" data-category="design">
-                <div class="category-icon">
-                    <div class="icon-bg">🎨</div>
-                </div>
-                <div class="category-content">
-                    <h3 class="category-title">Design AI</h3>
-                    <p class="category-description">AI-powered design and creative tools</p>
-                    <div class="category-stats">
-                        <span class="tools-count">116 tools</span>
-                        <span class="trend">↗️ +23% this month</span>
-                    </div>
-                    <div class="popular-tools">
-                        <span class="tool-tag">Midjourney</span>
-                        <span class="tool-tag">DALL-E</span>
-                        <span class="tool-tag">Canva AI</span>
-                    </div>
-                </div>
-                <div class="category-overlay">
-                    <button class="btn btn-primary">Explore Design AI</button>
-                </div>
-            </div>
-            
-            <div class="category-card" data-category="writing">
-                <div class="category-icon">
-                    <div class="icon-bg">✍️</div>
-                </div>
-                <div class="category-content">
-                    <h3 class="category-title">Writing AI</h3>
-                    <p class="category-description">AI writing assistants and content creators</p>
-                    <div class="category-stats">
-                        <span class="tools-count">66 tools</span>
-                        <span class="trend">↗️ +18% this month</span>
-                    </div>
-                    <div class="popular-tools">
-                        <span class="tool-tag">Jasper</span>
-                        <span class="tool-tag">Copy.ai</span>
-                        <span class="tool-tag">Writesonic</span>
-                    </div>
-                </div>
-                <div class="category-overlay">
-                    <button class="btn btn-primary">Explore Writing AI</button>
-                </div>
-            </div>
-            
-            <div class="category-card" data-category="productivity">
-                <div class="category-icon">
-                    <div class="icon-bg">⚡</div>
-                </div>
-                <div class="category-content">
-                    <h3 class="category-title">Productivity</h3>
-                    <p class="category-description">AI tools to boost your productivity</p>
-                    <div class="category-stats">
-                        <span class="tools-count">89 tools</span>
-                        <span class="trend">↗️ +12% this month</span>
-                    </div>
-                    <div class="popular-tools">
-                        <span class="tool-tag">Notion AI</span>
-                        <span class="tool-tag">Otter.ai</span>
-                        <span class="tool-tag">Grammarly</span>
-                    </div>
-                </div>
-                <div class="category-overlay">
-                    <button class="btn btn-primary">Explore Productivity</button>
-                </div>
-            </div>
-            
-            <div class="category-card" data-category="chatbots">
-                <div class="category-icon">
-                    <div class="icon-bg">💬</div>
-                </div>
-                <div class="category-content">
-                    <h3 class="category-title">Chatbots</h3>
-                    <p class="category-description">AI chatbots for customer service and interaction</p>
-                    <div class="category-stats">
-                        <span class="tools-count">27 tools</span>
-                        <span class="trend">↗️ +8% this month</span>
-                    </div>
-                    <div class="popular-tools">
-                        <span class="tool-tag">Intercom</span>
-                        <span class="tool-tag">Drift</span>
-                        <span class="tool-tag">Tidio</span>
-                    </div>
-                </div>
-                <div class="category-overlay">
-                    <button class="btn btn-primary">Explore Chatbots</button>
-                </div>
-            </div>
-            
-            <div class="category-card" data-category="video">
-                <div class="category-icon">
-                    <div class="icon-bg">🎥</div>
-                </div>
-                <div class="category-content">
-                    <h3 class="category-title">Video AI</h3>
-                    <p class="category-description">AI video creation and editing tools</p>
-                    <div class="category-stats">
-                        <span class="tools-count">43 tools</span>
-                        <span class="trend">↗️ +31% this month</span>
-                    </div>
-                    <div class="popular-tools">
-                        <span class="tool-tag">Synthesia</span>
-                        <span class="tool-tag">Runway</span>
-                        <span class="tool-tag">Pictory</span>
-                    </div>
-                </div>
-                <div class="category-overlay">
-                    <button class="btn btn-primary">Explore Video AI</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- Submit Tool Section -->
-<section class="submit-section" id="submit">
-    <div class="container">
-        <div class="submit-content">
-            <div class="submit-text">
-                <h2 class="submit-title">Submit Your AI Tool</h2>
-                <p class="submit-description">Help us grow the most comprehensive AI tools directory by sharing your favorite AI application with our community.</p>
-                <ul class="submit-benefits">
-                    <li>✅ Free listing for all tools</li>
-                    <li>✅ Reach 50,000+ monthly users</li>
-                    <li>✅ Professional tool showcase</li>
-                    <li>✅ SEO benefits for your tool</li>
-                </ul>
-                <button class="btn btn-primary submit-btn">
-                    <span class="btn-icon">🚀</span>
-                    <span>Submit Tool Now</span>
-                </button>
+        <!-- Tools Grid Section -->
+        <section class="tools-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <span class="badge-icon">🔥</span>
+                        <span>Popular Tools</span>
+                    </div>
+                    <h2 class="section-title">Top AI Tools This Month</h2>
+                    <p class="section-description">Most searched and highly-rated AI tools by our community</p>
+                </div>
+                
+                <div class="tools-filters">
+                    <button class="filter-btn active" data-filter="all">All Tools</button>
+                    <button class="filter-btn" data-filter="free">Free</button>
+                    <button class="filter-btn" data-filter="paid">Paid</button>
+                    <button class="filter-btn" data-filter="popular">Popular</button>
+                    <button class="filter-btn" data-filter="trending">Trending</button>
+                </div>
+                
+                <div class="tools-grid" id="tools-grid">
+                    <!-- Tools will be loaded dynamically -->
+                </div>
+                
+                <div class="load-more">
+                    <button class="btn btn-outline" id="load-more-tools">
+                        <span class="btn-icon">📥</span>
+                        <span>Load More Tools</span>
+                    </button>
+                </div>
             </div>
-            <div class="submit-visual">
-                <div class="submit-graphic">
-                    <div class="graphic-icon">➕</div>
-                    <div class="graphic-text">Add Your Tool</div>
+        </section>
+
+        <!-- Submit Tool Section -->
+        <section class="submit-section" id="submit">
+            <div class="container">
+                <div class="submit-content">
+                    <div class="submit-text">
+                        <h2 class="submit-title">Submit Your AI Tool</h2>
+                        <p class="submit-description">Help us grow the most comprehensive AI tools directory by sharing your favorite AI application with our community.</p>
+                        <ul class="submit-benefits">
+                            <li>✅ Free listing for all tools</li>
+                            <li>✅ Reach 50,000+ monthly users</li>
+                            <li>✅ Professional tool showcase</li>
+                            <li>✅ SEO benefits for your tool</li>
+                        </ul>
+                        <button class="btn btn-primary submit-btn">
+                            <span class="btn-icon">🚀</span>
+                            <span>Submit Tool Now</span>
+                        </button>
+                    </div>
+                    <div class="submit-visual">
+                        <div class="submit-graphic">
+                            <div class="graphic-icon">➕</div>
+                            <div class="graphic-text">Add Your Tool</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <div class="logo-icon">🤖</div>
+                            <div class="brand-text">
+                                <h3>AIverse</h3>
+                                <span>AI Tools Directory</span>
+                            </div>
+                        </div>
+                        <p class="footer-description">Your comprehensive directory for discovering the best AI tools and applications. Find, compare, and utilize artificial intelligence to enhance your productivity and creativity.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Featured Tools</a></li>
+                        <li><a href="#submit">Submit Tool</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Popular Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">AI Tools (403)</a></li>
+                        <li><a href="#">Design AI (116)</a></li>
+                        <li><a href="#">Writing AI (66)</a></li>
+                        <li><a href="#">Productivity (89)</a></li>
+                        <li><a href="#">Chatbots (27)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <span>🐦</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <span>💼</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <span>🐙</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <span>💬</span>
+                        </a>
+                    </div>
+                    <div class="newsletter">
+                        <h5>Stay Updated</h5>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input">
+                            <button class="newsletter-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 AIverse. Built with ❤️ by MiniMax Agent</p>
+                    <p>Last updated: December 2025 | 1000+ AI Tools Listed</p>
+                </div>
+                <div class="footer-stats">
+                    <span>🌟 4.9/5 Rating</span>
+                    <span>👥 50K+ Monthly Users</span>
+                    <span>🔄 Daily Updates</span>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <span class="back-to-top-icon">↑</span>
+    </button>
+
+    <!-- Notifications -->
+    <div class="notifications" id="notifications"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
