@@ -1,1 +1,27 @@
+# AIverse Jekyll Configuration
+title: "AIverse - AI Tools Directory"
+description: "Discover 1000+ AI tools across all categories"
+author: "MiniMax Agent"
 
+# Theme Configuration
+theme: jekyll-theme-minimal
+
+# GitHub Pages specific settings
+markdown: kramdown
+highlighter: rouge
+
+# Site settings
+baseurl: ""
+url: ""
+
+# Collections
+collections:
+  tools:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
