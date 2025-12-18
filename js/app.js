@@ -1199,9 +1199,10 @@ if ('serviceWorker' in navigator) {
                 console.log('SW registered: ', registration);
                 App.trackEvent('service_worker_registered');
             })
-            .catch(registration console.log('SWError => {
-                registration failed: ', registrationError);
-            });
+          .catch(error => {
+    console.error('SW registration failed:', error);
+});
+
     });
 }
 
