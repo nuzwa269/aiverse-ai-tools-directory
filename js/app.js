@@ -1194,7 +1194,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // Service Worker registration (for PWA capabilities)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        const isGithubPages = location.hostname.includes('github.io');
+
+if (!isGithubPages) {
+    navigator.serviceWorker.register('./sw.js')
+        .then(registration => {
+            console.log('SW registered:', registration);
+        })
+        .catch(error => {
+            console.error('SW registration failed:', error);
+        });
+}
+
             .then(registration => {
                 console.log('SW registered: ', registration);
                 App.trackEvent('service_worker_registered');
