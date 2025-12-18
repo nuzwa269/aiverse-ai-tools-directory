@@ -160,9 +160,10 @@ const ThemeManager = {
     applyTheme: (isDark) => {
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         const themeIcon = document.querySelector('.theme-icon');
-        if (themeIcon) {
-            themeIcon.textContent = isDark ? 'â˜€ï¸' : 'ðŸŒ™';
-        }
+if (themeIcon) {
+    themeIcon.textContent = isDark ? '☀️' : '🌙';
+}
+
     }
 };
 
@@ -646,7 +647,7 @@ const ToolManager = {
             const saveBtn = document.querySelector(`[data-tool-id="${toolId}"]`);
             if (saveBtn) {
                 saveBtn.classList.toggle('saved', !isSaved);
-                saveBtn.querySelector('.btn-icon').textContent = isSaved ? 'ðŸ’¾' : 'âœ…';
+                saveBtn.querySelector('.btn-icon').textContent = isSaved ? 'ℹ️' : '🚀';
             }
             
             App.trackEvent('tool_saved', { tool_id: toolId, action: isSaved ? 'unsave' : 'save' });
@@ -967,10 +968,10 @@ const NotificationManager = {
         notification.className = `notification notification-${type}`;
         
         const icons = {
-            success: 'âœ…',
-            error: 'âŒ',
-            warning: 'âš ï¸',
-            info: 'â„¹ï¸'
+            success: '✅',
+            error: 'ℹ️,
+            warning: '¸⚠️',
+            info: '¸⚠️'
         };
         
         notification.innerHTML = `
@@ -1014,7 +1015,7 @@ const NotificationManager = {
     hide: (element) => {
         const notification = element.closest('.notification');
         if (notification) {
-            notification.style.animation = 'slideOutRight 0.3s ease-out';
+        
             setTimeout(() => {
                 notification.remove();
             }, 300);
