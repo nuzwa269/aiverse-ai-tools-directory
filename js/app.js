@@ -513,7 +513,7 @@ const ToolManager = {
             <p class="tool-description">${tool.description}</p>
             <div class="tool-meta">
                 <span class="rating">${stars}</span>
-                <span class="growth">â†—ï¸ ${tool.growth}</span>
+                <span class="growth">↗️ ${tool.growth}</span>
                 <span class="category">${tool.categoryName}</span>
             </div>
             <div class="tool-features">
