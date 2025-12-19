@@ -500,7 +500,7 @@ const ToolManager = {
         card.setAttribute('data-tool-id', tool.id);
         card.setAttribute('data-category', tool.category);
 
-        const stars = 'â­'.repeat(Math.floor(tool.rating)) + (tool.rating % 1 >= 0.5 ? 'â˜†' : '');
+        const stars = '⭐'.repeat(Math.floor(tool.rating)) + (tool.rating % 1 >= 0.5 ? '☆' : '');
         const ratingText = `${tool.rating}/5 (${Utils.formatNumber(tool.reviews)} reviews)`;
 
         card.innerHTML = `
