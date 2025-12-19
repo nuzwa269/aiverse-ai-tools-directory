@@ -1197,7 +1197,7 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         const isGithubPages = location.hostname.includes('github.io');
 
-        if (!isGithubPages) {
+                if (!isGithubPages) {
             navigator.serviceWorker.register('./sw.js')
                 .then(registration => {
                     console.log('SW registered:', registration);
@@ -1207,15 +1207,6 @@ if ('serviceWorker' in navigator) {
                     console.error('SW registration failed:', error);
                 });
         }
-
-            .then(registration => {
-                console.log('SW registered: ', registration);
-                App.trackEvent('service_worker_registered');
-            })
-          .catch(error => {
-    console.error('SW registration failed:', error);
-});
-
     });
 }
 
