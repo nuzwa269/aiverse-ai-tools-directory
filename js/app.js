@@ -523,11 +523,11 @@ const ToolManager = {
             </div>
             <div class="tool-actions">
                 <button class="btn btn-primary visit-tool" data-affiliate="${tool.affiliateId}">
-                    <span class="btn-icon">ðŸš€</span>
+                 <span class="btn-icon">🚀</span>
                     <span>Visit Tool</span>
                 </button>
                 <button class="btn btn-outline save-tool" data-tool-id="${tool.id}">
-                    <span class="btn-icon">ðŸ’¾</span>
+                    <span class="btn-icon">💾</span>
                     <span>Save</span>
                 </button>
             </div>
