@@ -1,151 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIverse – AI Tools Directory</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Discover, compare and explore the best AI tools in one professional directory." />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-
-  <!-- JS (DO NOT CHANGE ORDER) -->
-  <script src="./js/app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AIverse - Professional AI Tools Directory</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header" id="header">
-  <nav class="navbar">
-    <div class="nav-left">
-      <h1 class="logo">AIverse</h1>
-    </div>
-
-    <div class="nav-center">
-      <input
-        type="text"
-        id="search-input"
-        placeholder="Search AI tools (ChatGPT, Image, Assistant...)"
-        autocomplete="off"
-      />
-      <button id="search-btn">🔍</button>
-    </div>
-
-    <div class="nav-right">
-      <button id="theme-toggle">🌙</button>
-    </div>
-  </nav>
-</header>
-
-<!-- ================= APP LAYOUT ================= -->
-<div class="app-layout">
-
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar">
-    <h3 class="sidebar-title">Categories</h3>
-    <ul class="category-list">
-      <li data-category="all" class="active">All Tools</li>
-      <li data-category="ai">AI Chat</li>
-      <li data-category="design">Design</li>
-      <li data-category="writing">Writing</li>
-      <li data-category="productivity">Productivity</li>
-      <li data-category="video">Video</li>
-      <li data-category="business">Business</li>
-      <li data-category="education">Education</li>
-      <li data-category="marketing">Marketing</li>
-    </ul>
-  </aside>
-
-  <!-- ================= MAIN CONTENT ================= -->
-  <main class="main-content">
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
-      <div class="hero-background">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-        <div class="particles" id="particles"></div>
-      </div>
-
-      <div class="hero-container">
-        <div class="hero-content">
-          <span class="hero-badge">🚀 1000+ AI Tools</span>
-
-          <h1 class="hero-title">
-            Discover the Future of
-            <span class="gradient-text">Artificial Intelligence</span>
-          </h1>
-
-          <p class="hero-description">
-            Your comprehensive directory for discovering, comparing, and using the best AI tools.
-          </p>
-
-          <div class="hero-stats">
-            <div><strong>1K+</strong><span>AI Tools</span></div>
-            <div><strong>15</strong><span>Categories</span></div>
-            <div><strong>50K+</strong><span>Monthly Users</span></div>
-          </div>
-
-          <div class="hero-actions">
-            <button class="btn btn-primary" id="explore-tools">Explore Tools</button>
-            <button class="btn btn-secondary" id="submit-tool">Submit Tool</button>
-          </div>
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>AIverse Loading...</h2>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- ===== FEATURED ===== -->
-    <section class="featured-section" id="featured">
-      <h2>Top Recommendation of the Day</h2>
+    <header class="mobile-header">
+        <div class="logo">AIverse 🤖</div>
+        <button id="mobile-menu-toggle" class="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
-      <div class="featured-card">
-        <h3>Claude AI</h3>
-        <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
-        <p>Advanced AI assistant for writing, research and reasoning.</p>
-        <button class="btn btn-primary">Try Claude Now</button>
-      </div>
-    </section>
+    <nav id="nav-menu" class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-text">AIverse</div>
+            <button id="theme-toggle" class="theme-btn">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
 
-    <!-- ===== TOOLS FILTERS ===== -->
-    <section class="tools-filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="free">Free</button>
-      <button class="filter-btn" data-filter="paid">Paid</button>
-      <button class="filter-btn" data-filter="popular">Popular</button>
-      <button class="filter-btn" data-filter="trending">Trending</button>
-    </section>
+        <ul class="nav-links">
+            <li><a href="#" class="active" data-filter="all">🏠 Home</a></li>
+            <li><a href="#featured" data-filter="popular">🔥 Popular</a></li>
+            <li><a href="#new" data-filter="trending">🚀 Trending</a></li>
+            <li class="separator"></li>
+            <li><a href="#" class="category-card" data-category="ai">🤖 AI Tools</a></li>
+            <li><a href="#" class="category-card" data-category="design">🎨 Design</a></li>
+            <li><a href="#" class="category-card" data-category="writing">✍️ Writing</a></li>
+            <li><a href="#" class="category-card" data-category="productivity">⚡ Productivity</a></li>
+        </ul>
 
-    <!-- ===== TOOLS GRID (JS INJECTS HERE) ===== -->
-    <section class="tools-section">
-      <div id="tools-grid" class="tools-list"></div>
+        <div class="sidebar-footer">
+            <p>© 2025 AIverse</p>
+        </div>
+    </nav>
 
-      <div class="load-more">
-        <button id="load-more-tools">Load More Tools</button>
-      </div>
-    </section>
+    <main class="main-content">
+        
+        <div id="search-overlay" class="search-overlay">
+            <button id="search-close" class="close-btn">&times;</button>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search AI tools (e.g. ChatGPT, Midjourney)...">
+                <button id="search-btn">🔍</button>
+            </div>
+            <div class="search-suggestions">
+                <span class="suggestion-tag" data-query="Free">Free</span>
+                <span class="suggestion-tag" data-query="Video">Video</span>
+                <span class="suggestion-tag" data-query="Coding">Coding</span>
+            </div>
+        </div>
 
-    <!-- ===== SUBMIT TOOL ===== -->
-    <section class="submit-section" id="submit">
-      <h2>Submit Your AI Tool</h2>
-      <p>Help us grow the most comprehensive AI tools directory.</p>
-      <button class="btn btn-primary">Submit Tool Now</button>
-    </section>
+        <header class="hero-section">
+            <div id="particles"></div> <div class="hero-content">
+                <div class="badge">New v2.0</div>
+                <h1 class="hero-title">Discover the Best <span class="gradient-text">AI Tools</span></h1>
+                <p class="hero-subtitle">Curated directory of the best AI tools to boost your productivity.</p>
+                
+                <div class="hero-actions">
+                    <button id="search-toggle" class="btn btn-primary">🔍 Find Tools</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="free">Show Free Tools</button>
+                </div>
 
-  </main>
-</div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="1500">0</h3>
+                        <p>Tools</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="50000">0</h3>
+                        <p>Users</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <p>© 2025 AIverse – AI Tools Directory</p>
-</footer>
+        <section id="tools-section" class="tools-section">
+            <div class="section-header">
+                <h2 class="section-title">Top AI Tools This Month</h2>
+                <div class="filters-scroll">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="free">Free</button>
+                    <button class="filter-btn" data-filter="paid">Paid</button>
+                    <button class="filter-btn" data-filter="popular">Popular</button>
+                </div>
+            </div>
 
-<!-- ================= UTILITIES ================= -->
-<button id="back-to-top" class="back-to-top">↑</button>
-<div id="notifications" class="notifications"></div>
+            <div id="tools-grid" class="tools-grid"></div>
 
+            <div class="pagination-container">
+                <button id="load-more-tools" class="btn btn-outline">Load More</button>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top">⬆️</button>
+
+    <div id="notifications"></div>
+
+    <script src="script.js"></script> 
 </body>
 </html>
