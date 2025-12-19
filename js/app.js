@@ -969,9 +969,9 @@ const NotificationManager = {
         
         const icons = {
             success: '✅',
-            error: 'ℹ️,
-            warning: '¸⚠️',
-            info: '¸⚠️'
+            error: '❌',
+            warning: '⚠️',
+            info: 'ℹ️'
         };
         
         notification.innerHTML = `
