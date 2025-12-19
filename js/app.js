@@ -1047,7 +1047,7 @@ const App = {
         // Initialize performance monitoring
         App.initPerformanceMonitoring();
         
-        console.log('âœ… AIverse App Ready!');
+          console.log('✅ AIverse App Ready!');
     },
 
     initEventListeners: () => {
@@ -1170,7 +1170,7 @@ const App = {
         localStorage.setItem('aiverse_events', JSON.stringify(events));
         
         // Log for development
-        console.log('ðŸ“Š Event:', eventName, data);
+        console.log('📊 Event:', eventName, data);
         
         // Send to analytics service (if configured)
         if (window.gtag) {
@@ -1197,15 +1197,16 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         const isGithubPages = location.hostname.includes('github.io');
 
-if (!isGithubPages) {
-    navigator.serviceWorker.register('./sw.js')
-        .then(registration => {
-            console.log('SW registered:', registration);
-        })
-        .catch(error => {
-            console.error('SW registration failed:', error);
-        });
-}
+        if (!isGithubPages) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(registration => {
+                    console.log('SW registered:', registration);
+                    App.trackEvent('service_worker_registered');
+                })
+                .catch(error => {
+                    console.error('SW registration failed:', error);
+                });
+        }
 
             .then(registration => {
                 console.log('SW registered: ', registration);
