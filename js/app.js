@@ -1235,3 +1235,33 @@ window.ToolManager = ToolManager;
 window.CategoryManager = CategoryManager;
 window.App = App;
 window.NotificationManager = NotificationManager;
+/* =====================================
+   Sidebar Category → Existing Filters
+   SAFE BRIDGE (Do Not Remove)
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarItems = document.querySelectorAll(".sidebar .category-list li");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  if (!sidebarItems.length || !filterButtons.length) return;
+
+  sidebarItems.forEach(item => {
+    item.addEventListener("click", () => {
+
+      // Remove active state from sidebar
+      sidebarItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+
+      const category = item.getAttribute("data-category");
+
+      // Find matching filter button
+      filterButtons.forEach(btn => {
+        if (btn.getAttribute("data-filter") === category || category === "all") {
+          btn.click(); // 🔥 Reuse existing logic
+        }
+      });
+
+    });
+  });
+});
