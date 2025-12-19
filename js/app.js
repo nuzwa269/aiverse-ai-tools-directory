@@ -1026,7 +1026,7 @@ const NotificationManager = {
 // Main App Controller
 const App = {
     init: () => {
-        console.log('ðŸ¤– AIverse App Starting...');
+        console.log('🤖 AIverse App Starting...');
         
         // Initialize core components
         LoadingManager.init();
