@@ -1744,22 +1744,25 @@ body {
 .p-4 { padding: var(--space-4); }
 .p-6 { padding: var(--space-6); }
 .p-8 { padding: var(--space-8); }
-/* --- Dark Mode Header Fix --- */
+/* --- Header Dark Mode Fix --- */
 
-/* 1. ہیڈر کا بیک گراؤنڈ کالا کریں */
-body.dark-theme .header {
-    background: rgba(17, 24, 39, 0.95) !important; /* گہرا نیلا/کالا رنگ */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* بارڈر کو ہلکا کریں */
+[data-theme="dark"] .header {
+    /* 1. بیک گراؤنڈ کو سفید سے ہٹا کر آپ کا ڈارک تھیم والا رنگ سیٹ کیا */
+    background: var(--bg-primary) !important; 
+    
+    /* 2. بارڈر کا رنگ ایڈجسٹ کیا */
+    border-bottom: 1px solid var(--border-color) !important;
 }
 
-/* 2. مینیو کے لنکس اور ٹیکسٹ کو سفید کریں */
-body.dark-mode .nav-container,
-body.dark-mode .nav-container a,
-body.dark-mode .navbar a {
-    color: #ffffff !important;
+/* 3. مینیو کے لنکس (Home, Categories) کا رنگ سفید/لائٹ کیا */
+[data-theme="dark"] .header a,
+[data-theme="dark"] .navbar a,
+[data-theme="dark"] .nav-link {
+    color: var(--text-primary) !important;
 }
 
-/* 3. اگر ہوور (Hover) پر رنگ غائب ہو تو */
-body.dark-mode .nav-container a:hover {
-    color: #a5b4fc !important; /* ہلکا نیلا یا اپنی مرضی کا رنگ */
+/* 4. ہوور (Hover) کرنے پر رنگ */
+[data-theme="dark"] .header a:hover,
+[data-theme="dark"] .navbar a:hover {
+    color: var(--text-light) !important;
 }
