@@ -282,7 +282,7 @@ const SearchManager = {
     getNoResultsHTML: (query) => {
         return `
             <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 4rem;">
-                <div class="no-results-icon" style="font-size: 4rem; margin-bottom: 1rem;">ðŸ”</div>
+               <div class="no-results-icon" style="font-size: 4rem; margin-bottom: 1rem;">🔍</div>
                 <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">No tools found</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 2rem;">No AI tools match "${query}". Try different keywords or browse our categories.</p>
                 <button onclick="SearchManager.resetSearch()" class="btn btn-primary">Reset Search</button>
