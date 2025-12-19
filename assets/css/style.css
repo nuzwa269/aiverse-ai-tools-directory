@@ -1743,3 +1743,19 @@ body {
 .p-4 { padding: var(--space-4); }
 .p-6 { padding: var(--space-6); }
 .p-8 { padding: var(--space-8); }
+/* =====================================
+   STEP 2: Categories Grid → Secondary
+   SAFE VISUAL HIDE (JS intact)
+===================================== */
+
+/* Desktop / iPad */
+.categories-section {
+  display: none;
+}
+
+/* Optional: show on very small screens if needed */
+@media (max-width: 768px) {
+  .categories-section {
+    display: block;
+  }
+}
