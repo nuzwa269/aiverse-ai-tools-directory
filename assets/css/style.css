@@ -593,15 +593,16 @@ body {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 900px;       /* 1200px سے کم کیا تاکہ ٹیکسٹ بہت زیادہ نہ پھیل جائے */
+    margin: 0 auto;         /* باکس کو سینٹر کرنے کے لیے */
     padding: 0 var(--space-6);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    align-items: center;
+    
+    /* Grid کو ہٹا کر Flex استعمال کریں */
+    display: flex;
+    flex-direction: column; /* چیزوں کو اوپر نیچے رکھنے کے لیے */
+    align-items: center;    /* افقی طور پر سینٹر کرنے کے لیے */
+    text-align: center;     /* لکھائی کو درمیان میں لانے کے لیے */
 }
-
 .hero-content {
     color: white;
 }
@@ -1743,3 +1744,25 @@ body {
 .p-4 { padding: var(--space-4); }
 .p-6 { padding: var(--space-6); }
 .p-8 { padding: var(--space-8); }
+/* --- Header Dark Mode Fix --- */
+
+[data-theme="dark"] .header {
+    /* 1. بیک گراؤنڈ کو سفید سے ہٹا کر آپ کا ڈارک تھیم والا رنگ سیٹ کیا */
+    background: var(--bg-primary) !important; 
+    
+    /* 2. بارڈر کا رنگ ایڈجسٹ کیا */
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* 3. مینیو کے لنکس (Home, Categories) کا رنگ سفید/لائٹ کیا */
+[data-theme="dark"] .header a,
+[data-theme="dark"] .navbar a,
+[data-theme="dark"] .nav-link {
+    color: var(--text-primary) !important;
+}
+
+/* 4. ہوور (Hover) کرنے پر رنگ */
+[data-theme="dark"] .header a:hover,
+[data-theme="dark"] .navbar a:hover {
+    color: var(--text-light) !important;
+}
