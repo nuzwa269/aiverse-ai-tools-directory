@@ -1744,3 +1744,22 @@ body {
 .p-4 { padding: var(--space-4); }
 .p-6 { padding: var(--space-6); }
 .p-8 { padding: var(--space-8); }
+/* --- Dark Mode Header Fix --- */
+
+/* 1. ہیڈر کا بیک گراؤنڈ کالا کریں */
+body.dark-theme .header {
+    background: rgba(17, 24, 39, 0.95) !important; /* گہرا نیلا/کالا رنگ */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* بارڈر کو ہلکا کریں */
+}
+
+/* 2. مینیو کے لنکس اور ٹیکسٹ کو سفید کریں */
+body.dark-mode .nav-container,
+body.dark-mode .nav-container a,
+body.dark-mode .navbar a {
+    color: #ffffff !important;
+}
+
+/* 3. اگر ہوور (Hover) پر رنگ غائب ہو تو */
+body.dark-mode .nav-container a:hover {
+    color: #a5b4fc !important; /* ہلکا نیلا یا اپنی مرضی کا رنگ */
+}
