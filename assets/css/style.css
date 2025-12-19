@@ -2013,3 +2013,106 @@ body.dark .footer {
   background: #020617;
   color: #9ca3af;
 }
+/* =====================================
+   STEP 6: Mobile / iPad Final Polish
+   SAFE / CSS ONLY
+===================================== */
+
+/* -------- iPad Landscape & Tablet -------- */
+@media (max-width: 1024px) {
+
+  .layout {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes horizontal */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .category-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .category-list li {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+
+  /* Page content spacing */
+  .page-content {
+    padding-top: 16px;
+  }
+}
+
+/* -------- Mobile Phones -------- */
+@media (max-width: 768px) {
+
+  /* Header search input full width */
+  .nav-center {
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  /* Hero spacing */
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  /* Buttons tap-friendly */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .tool-visit-btn {
+    min-height: 44px; /* Apple HIG */
+    padding: 10px 16px;
+  }
+
+  /* Tool cards stack nicely */
+  .tool-card {
+    padding: 14px;
+  }
+
+  .tool-description {
+    display: none; /* cleaner mobile list */
+  }
+
+  /* Footer spacing */
+  .footer {
+    font-size: 12px;
+    padding: 20px 12px;
+  }
+}
+
+/* -------- Very Small Devices -------- */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .tool-name {
+    font-size: 14px;
+  }
+
+  .tool-rating {
+    font-size: 12px;
+  }
+}
