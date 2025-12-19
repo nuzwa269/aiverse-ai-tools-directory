@@ -1759,3 +1759,50 @@ body {
     display: block;
   }
 }
+/* =====================================
+   STEP 3: Sticky & Scrollable Sidebar
+   SAFE CSS ONLY
+===================================== */
+
+.layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Sidebar behavior */
+.sidebar {
+  position: sticky;
+  top: 70px; /* header height */
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+
+  /* smooth scroll on iPad */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Page content scrolls normally */
+.page-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Hide scrollbar (optional, clean look) */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(79, 70, 229, 0.3);
+  border-radius: 6px;
+}
+
+/* ================================
+   RESPONSIVE SAFETY
+================================ */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+    top: 0;
+  }
+}
