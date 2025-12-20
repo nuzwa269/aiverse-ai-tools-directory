@@ -439,38 +439,77 @@
             </div>
         </section>
 
-        <!-- Tools Grid Section -->
-        <section class="tools-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <span class="badge-icon">🔥</span>
-                        <span>Popular Tools</span>
-                    </div>
-                    <h2 class="section-title">Top AI Tools This Month</h2>
-                    <p class="section-description">Most searched and highly-rated AI tools by our community</p>
-                </div>
-                
-                <div class="tools-filters">
-                    <button class="filter-btn active" data-filter="all">All Tools</button>
-                    <button class="filter-btn" data-filter="free">Free</button>
-                    <button class="filter-btn" data-filter="paid">Paid</button>
-                    <button class="filter-btn" data-filter="popular">Popular</button>
-                    <button class="filter-btn" data-filter="trending">Trending</button>
-                </div>
-                
-                <div class="tools-grid" id="tools-grid">
-                    <!-- Tools will be loaded dynamically -->
-                </div>
-                
-                <div class="load-more">
-                    <button class="btn btn-outline" id="load-more-tools">
-                        <span class="btn-icon">📥</span>
-                        <span>Load More Tools</span>
-                    </button>
-                </div>
+        <section class="tools-section" id="tools-section">
+    <div class="main-layout-container">
+
+        <aside class="sidebar-menu">
+            <div class="sidebar-header">
+                <h3>Filters</h3>
             </div>
-        </section>
+
+            <ul class="category-list">
+                <li>
+                    <a href="#" class="filter-btn active" data-filter="all">
+                        <span class="icon">🏠</span>
+                        <span class="text">All Tools</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="filter-btn" data-filter="free">
+                        <span class="icon">🎁</span>
+                        <span class="text">Free Tools</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="filter-btn" data-filter="paid">
+                        <span class="icon">💎</span>
+                        <span class="text">Paid Tools</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="filter-btn" data-filter="popular">
+                        <span class="icon">🔥</span>
+                        <span class="text">Popular</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="filter-btn" data-filter="trending">
+                        <span class="icon">📈</span>
+                        <span class="text">Trending</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-icon">🔥</span>
+                    <span>Popular Tools</span>
+                </div>
+                <h2 class="section-title">Top AI Tools This Month</h2>
+                <p class="section-description">Most searched and highly-rated AI tools by our community</p>
+            </div>
+
+            <div class="tools-grid" id="tools-grid">
+                </div>
+
+            <div class="load-more">
+                <button class="btn btn-outline" id="load-more-tools">
+                    <span class="btn-icon">📥</span>
+                    <span>Load More Tools</span>
+                </button>
+            </div>
+
+        </main>
+
+    </div>
+    </section>
 
         <!-- Submit Tool Section -->
         <section class="submit-section" id="submit">
