@@ -1766,3 +1766,124 @@ body {
 [data-theme="dark"] .navbar a:hover {
     color: var(--text-light) !important;
 }
+/* --- Sidebar Layout Styles --- */
+
+/* 1. Main Container (Splits screen into 2 parts) */
+.main-layout-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    gap: 40px; /* Space between sidebar and tools */
+    position: relative;
+    /* Uses your theme variables if available, otherwise defaults */
+    background-color: transparent; 
+}
+
+/* 2. Sidebar Styling */
+.sidebar-menu {
+    width: 260px;          /* Width of the menu */
+    flex-shrink: 0;        /* Don't shrink */
+    position: sticky;      /* Stick on scroll */
+    top: 100px;            /* Distance from top */
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding-right: 10px;
+    border-right: 1px solid rgba(0,0,0,0.05); /* Optional divider line */
+}
+
+/* Sidebar Header */
+.sidebar-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    /* Will inherit text color automatically */
+}
+
+/* 3. Menu Links Styling */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    margin-bottom: 8px;
+}
+
+.category-list a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: inherit; /* Takes color from body/theme */
+    opacity: 0.8;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background: transparent;
+}
+
+/* Icons styling */
+.category-list a .icon {
+    margin-right: 12px;
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.category-list a:hover {
+    background-color: rgba(0,0,0,0.05);
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Active State (When clicked) */
+.category-list a.active, 
+.category-list a:focus {
+    background-color: #667eea; /* Your primary purple color */
+    color: #ffffff !important;
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* 4. Right Content Area */
+.content-area {
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Fix for Grid inside the content area */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* 5. Mobile Responsive */
+@media (max-width: 991px) {
+    .main-layout-container {
+        flex-direction: column;
+    }
+    .sidebar-menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        margin-bottom: 20px;
+    }
+    .category-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+    .category-list a {
+        white-space: nowrap;
+        background: rgba(0,0,0,0.03);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+}
